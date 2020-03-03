@@ -1,1 +1,23 @@
+R1 = 1;
+Cap = 0.25;
+R2 =  2;
+L = 0.2;
+R3 = 10;
+alpha = 100;
+R4 = 0.1;
+RO = 1000;
+
+close all
+%%%%% DC Sweep %%%%%
+fig_dc = figure;
+hold on;
+V1 = [];
+V5 = [];
+for Vin=-10:0.1:10
+    F(8) = Vin; % Set DC voltage
+    % Solve for DC
+    e = G\F;
+    V1 = [V1 e(1)];
+    V5 = [V5 e(5)];
+end
 
